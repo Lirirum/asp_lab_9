@@ -1,0 +1,25 @@
+﻿@using WebApplication11.Models 
+@{
+
+    List<Product> products = new List<Product>();
+
+
+    products.Add(new Product { ID = 1, Name = "Продукт 1", Price = 10.99M });
+    products.Add(new Product { ID = 2, Name = "Продукт 2", Price = 19.99M });
+    products.Add(new Product { ID = 3, Name = "Продукт 3", Price = 5.49M });
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width" />
+    <title>Завдання</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="main">
+    @await Component.InvokeAsync("Product", new {products=products})
+    @await Component.InvokeAsync("Weather", new {region="Kyiv"})
+    </div>
+</body>
+</html>
